@@ -14,7 +14,8 @@ export default createMuiTheme({
         },
         secondary:{
            main:`${arcOrange}`
-        } 
+        },
+
     },
     typography:{
        tab:{
@@ -22,7 +23,13 @@ export default createMuiTheme({
          textTransform:"none",
          fontWeight:700,
          fontSize:"1rem",
-       }
+       },
+        estimate:{
+            fontSize:"1rem",
+            textTransform:"none",
+            fontFamily:"Pacifico",
+            color:"white",
+        }
     }
     
 });
