@@ -123,7 +123,7 @@ export default function Contact(props) {
           event.target.value
         );
 
-        if (!valid) {
+        if (event.target.value.length < 5) {
           setPhoneHelper("Invalid phone");
         } else {
           setPhoneHelper("");
@@ -136,6 +136,8 @@ export default function Contact(props) {
 
   const onConfirm = () => {
     setLoading(true);
+    axios.get("https://us-central1-arcdevelopment-6ac2f.cloudfunctions.net/sendMail")
+    .then(res=>console.log(res)).catch(err=>console.log(err));
 
 
   };
@@ -199,10 +201,10 @@ export default function Contact(props) {
                   style={{ color: theme.palette.common.blue, fontSize: "1rem" }}
                 >
                   <a
-                    href="tel:3163589320"
+                    href="tel:3316062251"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
-                    (316) 358-9320
+                    03316062251
                   </a>
                 </Typography>
               </Grid>
@@ -221,10 +223,10 @@ export default function Contact(props) {
                   style={{ color: theme.palette.common.blue, fontSize: "1rem" }}
                 >
                   <a
-                    href="mailto:zachary@arcsoftwaredevelopment.com"
+                    href="mailto:mahmedmushtaq296@gmail.com"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
-                    zachary@arcsoftwaredevelopment.com
+                   mahmedmushtaq296@gmail.com
                   </a>
                 </Typography>
               </Grid>
@@ -276,12 +278,12 @@ export default function Contact(props) {
             </Grid>
             <Grid item container justify="center" style={{ marginTop: "2em" }}>
               <Button
-                disabled={
-                  name.length === 0 ||
-                  message.length === 0 ||
-                  phoneHelper.length !== 0 ||
-                  emailHelper.length !== 0
-                }
+              disabled={
+                                 name.length === 0 ||
+                                 message.length === 0 ||
+                                 phoneHelper.length !== 0 ||
+                                 emailHelper.length !== 0
+              }
                 variant="contained"
                 className={classes.sendButton}
                 onClick={() => setOpen(true)}
@@ -441,7 +443,7 @@ export default function Contact(props) {
               <Grid container justify={matchesMD ? "center" : undefined} item>
                 <Button
                   component={Link}
-                  href="/revolution"
+                  to="/revolution"
                   variant="outlined"
                   className={classes.learnButton}
                   onClick={() => props.setValue(2)}
@@ -460,7 +462,7 @@ export default function Contact(props) {
         <Grid item>
           <Button
             component={Link}
-            href="/estimate"
+            to="/estimate"
             variant="contained"
             className={classes.estimateButton}
             onClick={() => {

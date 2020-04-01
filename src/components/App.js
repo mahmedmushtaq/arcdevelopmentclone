@@ -21,7 +21,6 @@ function App() {
        <BrowserRouter>
           <Header value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
           <Switch>
-          <Route exact path={"/"} component={(props)=> <LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />}/>
           <Route exact path={"/services"} component={(props)=> <Services {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/> }/>
           <Route exact path={"/customsoftware"} component={(props)=> <CustomSoftware {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />}/>
           <Route exact path={"/mobileapps"}  component={(props)=> <MobileApps {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />}/>
@@ -29,7 +28,8 @@ function App() {
           <Route exact path={"/revolution"} component={(props)=><Revolution {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
           <Route exact path={"/about"} component={(props)=><About {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
           <Route exact path={"/contact"} component={(props)=><Contact {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
-          <Route exact path={"/estimate"} component={()=> <div>Estimate</div>}/>
+          <Route  path={"/"} component={(props)=> <LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />}/>
+
           </Switch>
            <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
        </BrowserRouter>
