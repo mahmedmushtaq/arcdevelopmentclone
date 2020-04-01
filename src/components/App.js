@@ -11,6 +11,7 @@ import MobileApps from "./MobileApps";
 import Websites from "./websites";
 import Revolution from "./Revolution";
 import About from "./About";
+import Contact from "./Contact";
 
 function App() {
     const [value,setValue] = useState(0);
@@ -27,7 +28,7 @@ function App() {
           <Route exact path={"/websites"} component={(props)=> <Websites {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
           <Route exact path={"/revolution"} component={(props)=><Revolution {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
           <Route exact path={"/about"} component={(props)=><About {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
-          <Route exact path={"/contact"} component={()=> <div>Contact Us</div>}/>
+          <Route exact path={"/contact"} component={(props)=><Contact {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
           <Route exact path={"/estimate"} component={()=> <div>Estimate</div>}/>
           </Switch>
            <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
